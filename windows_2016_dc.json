@@ -139,7 +139,7 @@
     {
       "type": "vagrant",
       "keep_input_artifact": false,
-      "output": "windows_2016_{{.Provider}}.box",
+      "output": "windows_2016_dc_{{.Provider}}.box",
       "vagrantfile_template": "vagrantfile-windows_2016.template"
     }
   ],
