@@ -2,7 +2,7 @@
 This can be extremely helpful when testing applications using end to end authentication based on Active Directory
 instead of methods such as stored username & passwords
 
-### Building with existing ISOs
+## Building with existing ISOs
 If you have already downloaded the ISOs or would like to override them, set these additional variables:
 - iso_url - path to existing ISO
 - iso_checksum - md5sum of existing ISO (if different)
@@ -16,3 +16,6 @@ If you only want to build with Hyper-V, add `--only hyperv-iso`. You can also sp
 ```
 packer build --only hyperv-iso -var 'hyperv_switchname=Ethernet' -var 'iso_url=./server2016tp5.iso' .\windows_2016_dc.json
 ```
+
+
+## Issues & TODOs
