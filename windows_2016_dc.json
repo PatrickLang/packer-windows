@@ -124,8 +124,8 @@
     {
       "type": "powershell",
       "scripts": [
-        "./scripts/static-ip.ps1",
-        "./scripts/create-dhcp-service.ps1"
+        "./scripts/dc/static-ip.ps1",
+        "./scripts/dc/create-dhcp-service.ps1"
       ]
     },
     {
