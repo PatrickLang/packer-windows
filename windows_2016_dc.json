@@ -115,7 +115,6 @@
     {
       "type": "powershell",
       "inline": [
-        "dir ENV:\\",
         "install-windowsfeature AD-Domain-Services",
         "Import-Module ADDSDeployment",
         "Install-ADDSForest -DomainName {{user `DomainName`}} -DomainNetbiosName {{user `DomainNetbiosName`}} -CreateDnsDelegation:$false -DatabasePath \"C:\\Windows\\NTDS\" -DomainMode \"Win2012R2\" -ForestMode \"Win2012R2\" -InstallDns:$true -LogPath \"C:\\Windows\\NTDS\" -NoRebootOnCompletion:$true -SysvolPath \"C:\\Windows\\SYSVOL\" -SafeModeAdministratorPassword (ConvertTo-SecureString -String \"{{user `SafeModeAdministratorPassword`}}\" -AsPlainText -Force) -Force:$true"
