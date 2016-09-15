@@ -19,6 +19,9 @@ packer build --only hyperv-iso -var 'hyperv_switchname=Ethernet' -var 'iso_url=.
 
 
 ## Issues & TODOs
+* Issue: ./dc/static-ip.ps1 changes the only vNIC's IP. This breaks the host -> guest connection for WinRM remoting. Another vSwitch is needed for internal vs external network
+ * Alternative - do this in Vagrant instead?
 * TODO: confirm that static IP persists. May need to save MAC address or _something else?_ in the box and reapply when its deployed
 * TODO: Update other packerfiles here to call sysprep so they can join the domain
 * TODO: Vagrantfile to deploy a DC and some domain joined servers
+* TODO: remove ENV:\ dump from inline powershell script
