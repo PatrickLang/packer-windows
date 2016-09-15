@@ -19,3 +19,6 @@ packer build --only hyperv-iso -var 'hyperv_switchname=Ethernet' -var 'iso_url=.
 
 
 ## Issues & TODOs
+* TODO: confirm that static IP persists. May need to save MAC address or _something else?_ in the box and reapply when its deployed
+* TODO: Update other packerfiles here to call sysprep so they can join the domain
+* TODO: Vagrantfile to deploy a DC and some domain joined servers

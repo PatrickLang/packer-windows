@@ -122,6 +122,13 @@
       ]
     },
     {
+      "type": "powershell",
+      "scripts": [
+        "./scripts/static-ip.ps1",
+        "./scripts/create-dhcp-service.ps1"
+      ]
+    },
+    {
       "type": "windows-restart"
     },
     {
@@ -129,9 +136,7 @@
       "execute_command": "{{ .Vars }} cmd /c \"{{ .Path }}\"",
       "scripts": [
         "./scripts/pin-powershell.bat",
-        "./scripts/set-winrm-automatic.bat",
-        "./scripts/uac-enable.bat",
-        "./scripts/compact.bat"
+        "./scripts/set-winrm-automatic.bat"
       ]
     }
   ],
@@ -149,7 +154,7 @@
     "iso_checksum": "6417ba460f95bd91ded05dfacd553783",
     "autounattend": "./answer_files/2016/Autounattend.xml",
     "hyperv_switchname": "{{env `hyperv_switchname`}}",
-    "DomainName": "testdomain.com",
+    "DomainName": "contoso.local",
     "DomainNetbiosName": "testdomain",
     "SafeModeAdministratorPassword": "BadAdminPassword!"
   }
