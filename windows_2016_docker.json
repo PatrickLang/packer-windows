@@ -31,6 +31,7 @@
       "enable_virtualization_extensions":true
     },
     {
+      "vm_name":"WindowsServer2016TP5Docker",
       "type": "vmware-iso",
       "communicator": "winrm",
       "iso_url": "{{user `iso_url`}}",
@@ -66,6 +67,7 @@
       }
     },
     {
+      "vm_name":"WindowsServer2016TP5Docker",
       "type": "virtualbox-iso",
       "communicator": "winrm",
       "iso_url": "{{user `iso_url`}}",
@@ -139,6 +141,7 @@
       "type": "windows-shell",
       "scripts": [
         "./scripts/uac-enable.bat",
+        "./scripts/set-winrm-automatic.bat",
         "./scripts/compile-dotnet-assemblies.bat",
         "./scripts/compact.bat"
       ]

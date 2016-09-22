@@ -108,6 +108,11 @@ packer build --only hyperv-iso -var 'hyperv_switchname=Ethernet' -var 'iso_url=.
 ```
 
 
+I have the ISO already downloaded to save time, and only have Hyper-V installed on my laptop, so I run:
+```
+packer build --only hyperv-iso -var 'hyperv_switchname=Ethernet' -var 'iso_url=./server2016tp5.iso' .\windows_2016_docker.json
+```
+
 You then can use this box with Vagrant to spin up a Hyper-V VM. Vagrant currently
 needs some patches as well, see the script [install-vagrant.ps1](hyperv/scripts/install-vagrant.ps1)
 how to patch Vagrant 1.8.4 to fix these issues.
