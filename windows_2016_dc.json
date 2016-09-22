@@ -115,10 +115,16 @@
     {
       "type": "powershell",
       "inline": [
-        "dir ENV:\\",
         "install-windowsfeature AD-Domain-Services",
         "Import-Module ADDSDeployment",
-        "Install-ADDSForest -DomainName {{user `DomainName`}} -DomainNetbiosName {{user `DomainNetbiosName`}} -CreateDnsDelegation:$false -DatabasePath \"C:\\Windows\\NTDS\" -DomainMode \"Win2012R2\" -ForestMode \"Win2012R2\" -InstallDns:$true -LogPath \"C:\\Windows\\NTDS\" -NoRebootOnCompletion:$false -SysvolPath \"C:\\Windows\\SYSVOL\" -SafeModeAdministratorPassword (ConvertTo-SecureString -String \"{{user `SafeModeAdministratorPassword`}}\" -AsPlainText -Force) -Force:$true"
+        "Install-ADDSForest -DomainName {{user `DomainName`}} -DomainNetbiosName {{user `DomainNetbiosName`}} -CreateDnsDelegation:$false -DatabasePath \"C:\\Windows\\NTDS\" -DomainMode \"Win2012R2\" -ForestMode \"Win2012R2\" -InstallDns:$true -LogPath \"C:\\Windows\\NTDS\" -NoRebootOnCompletion:$true -SysvolPath \"C:\\Windows\\SYSVOL\" -SafeModeAdministratorPassword (ConvertTo-SecureString -String \"{{user `SafeModeAdministratorPassword`}}\" -AsPlainText -Force) -Force:$true"
+      ]
+    },
+    {
+      "type": "powershell",
+      "scripts": [
+        "./scripts/dc/static-ip.ps1",
+        "./scripts/dc/create-dhcp-service.ps1"
       ]
     },
     {
@@ -129,9 +135,7 @@
       "execute_command": "{{ .Vars }} cmd /c \"{{ .Path }}\"",
       "scripts": [
         "./scripts/pin-powershell.bat",
-        "./scripts/set-winrm-automatic.bat",
-        "./scripts/uac-enable.bat",
-        "./scripts/compact.bat"
+        "./scripts/set-winrm-automatic.bat"
       ]
     }
   ],
@@ -149,7 +153,7 @@
     "iso_checksum": "6417ba460f95bd91ded05dfacd553783",
     "autounattend": "./answer_files/2016/Autounattend.xml",
     "hyperv_switchname": "{{env `hyperv_switchname`}}",
-    "DomainName": "testdomain.com",
+    "DomainName": "contoso.local",
     "DomainNetbiosName": "testdomain",
     "SafeModeAdministratorPassword": "BadAdminPassword!"
   }

@@ -1,3 +1,5 @@
+# Note: this was inlined to windows_2016_dc.json
+
 param(
     $DomainName,
     $DomainNetbiosName
