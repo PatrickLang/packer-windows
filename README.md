@@ -86,6 +86,24 @@ The scripts in this repo will install all Windows updates – by default – dur
 
 Doing so will give you hours back in your day, which is a good thing.
 
+
+### Offline Updates
+
+> Work in Progress
+
+Windows Updates have gotten pretty large and are over a gigabyte for Windows Server 2016.
+Instead of downloading them for each `packer build`, you can download them manually then
+use the local copy.
+
+
+1. Be sure to allow Packer to open up firewall ports as needed: `netsh advfirewall firewall add rule name="Packer HTTP" dir=in action=allow program="c:\packer\packer.exe" enable=yes`
+
+Worklog:
+- [ ] Set up http server
+- [ ] Write script to enumerate MSUs and install them
+- [ ] Remove the temp directory once done
+
+
 ### WinRM
 
 These boxes use WinRM. There is no OpenSSH installed.
@@ -114,13 +132,8 @@ how to patch Vagrant 1.8.4 to fix these issues.
 
 The generated box files include a Vagrantfile template that is suitable for
 use with Vagrant 1.7.4+, which includes native support for Windows and uses
-WinRM to communicate with the box.
-
-Vagrant 1.8.4 does need some workarounds though:
-- There is a bug in get_vm_status.ps1
-- winrm-fs needs an update as well
-See: https://github.com/PatrickLang/packer-windows/issues/1#issuecomment-230151622
-These are fixed in 1.8.5, so upgrading is easiest.
+WinRM to communicate with the box. Version 1.9.3+ are recommended for Hyper-V
+for nested virtualization support.
 
 Example Steps for Hyper-V:
 ```
