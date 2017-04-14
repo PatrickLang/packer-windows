@@ -73,6 +73,12 @@
   ],
   "provisioners": [
     {
+      "type": "powershell",
+      "scripts": [
+        "./scripts/install-offline-updates.ps1"
+      ]
+    },
+    {
       "type": "windows-shell",
       "scripts": [
         "./scripts/vm-guest-tools.bat",
@@ -101,16 +107,6 @@
     },
     {
       "type": "windows-restart"
-    },
-    {
-      "type": "powershell",
-      "inline": [
-        "mkdir c:\\updates",
-        "cd c:\\updates",
-        "Write-Output $ENV:PACKER_HTTP_ADDR",
-        "Invoke-WebRequest -UseBasicParsing \"http://$($ENV:PACKER_HTTP_ADDR)/foo.msu\" -OutFile foo.msu",
-        "notepad.exe"
-      ]
     },
     {
       "type": "windows-shell",

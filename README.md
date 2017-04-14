@@ -99,8 +99,8 @@ use the local copy.
 1. Be sure to allow Packer to open up firewall ports as needed: `netsh advfirewall firewall add rule name="Packer HTTP" dir=in action=allow program="c:\packer\packer.exe" enable=yes`
 
 Worklog:
-- [ ] Set up http server
-- [ ] Write script to enumerate MSUs and install them
+- [x] Set up http server
+- [x] Write script to enumerate MSUs and install them
 - [ ] Remove the temp directory once done
 
 
