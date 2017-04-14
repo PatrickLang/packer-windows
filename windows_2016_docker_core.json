@@ -88,6 +88,7 @@
     }
   ],
   "variables": {
+    "lcu_url": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2017/04/windows10.0-kb4015217-x64_60bfcc7b365f9ab40608e2fb96bc2be8229bc319.msu"
     "iso_url": "http://care.dlservice.microsoft.com/dl/download/1/4/9/149D5452-9B29-4274-B6B3-5361DBDA30BC/14393.0.161119-1705.RS1_REFRESH_SERVER_EVAL_X64FRE_EN-US.ISO",
     "iso_checksum_type": "md5",
     "iso_checksum": "70721288BBCDFE3239D8F8C0FAE55F1F",
