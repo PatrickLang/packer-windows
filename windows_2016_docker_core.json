@@ -79,6 +79,18 @@
       ]
     },
     {
+      "type": "windows-restart"
+    },
+    {
+      "type": "powershell",
+      "scripts": [
+        "./scripts/win-updates.ps1"
+      ]
+    },
+    {
+      "type": "windows-restart"
+    },
+    {
       "type": "windows-shell",
       "scripts": [
         "./scripts/vm-guest-tools.bat",

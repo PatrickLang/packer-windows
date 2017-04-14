@@ -101,7 +101,7 @@ use the local copy.
 Worklog:
 - [x] Set up http server
 - [x] Write script to enumerate MSUs and install them
-- [ ] Remove the temp directory once done
+- [x] Remove the temp directory once done
 
 
 ### WinRM
