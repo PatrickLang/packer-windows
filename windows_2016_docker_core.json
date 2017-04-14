@@ -106,9 +106,10 @@
       "type": "powershell",
       "inline": [
         "mkdir c:\\updates",
-	"cd c:\\updates",
+        "cd c:\\updates",
         "Write-Output $ENV:PACKER_HTTP_ADDR",
-        "Invoke-WebRequest -UseBasicParsing \"http://$($ENV:PACKER_HTTP_ADDR)/foo.msu\" -OutFile foo.msu"
+        "Invoke-WebRequest -UseBasicParsing \"http://$($ENV:PACKER_HTTP_ADDR)/foo.msu\" -OutFile foo.msu",
+        "notepad.exe"
       ]
     },
     {
