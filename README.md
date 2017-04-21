@@ -108,6 +108,8 @@ Worklog:
 
 These boxes use WinRM. There is no OpenSSH installed.
 
+> Warning: These boxes don't currently enable SSL. Cleartext credentials could be stolen and admin actions could be captured on the network.
+
 ### Hyper-V Support
 If you are running Windows 10, then you can also use these packerfiles to build a Hyper-V virtual machine:
 
