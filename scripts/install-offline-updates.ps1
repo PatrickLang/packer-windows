@@ -10,7 +10,7 @@ $httpIndex.Links | Select-Object -Property href | ForEach-Object {
         #dism.exe /online /add-package:"$($_.href)"
         Get-item $localPath | Write-Output
         Write-Output "Starting update..."
-        wusa.exe $localPath /quiet /norestart /log:"$($ENV:TEMP)\\$($_.href).log"
+        wusa.exe $localPath /quiet /norestart /log:"$($ENV:TEMP)\\$($_.href).log" # BUG this seems to finish in ~1 minute and fail rather than completing in ~20-25 minutes for kb4015217
         $t = Measure-Command { Get-Process wusa | Wait-Process }
         Write-Output "Update process finished in $($t.ToString())"
         Start-Process -wait notepad.exe # TEMP for debugging
