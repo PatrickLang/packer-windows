@@ -101,7 +101,7 @@ use the local copy.
 Worklog:
 - [x] Set up http server
 - [x] Write script to enumerate MSUs and install them
-- [x] Remove the temp directory once done
+- [ ] Figure out why kb4015217 is exiting in ~1 minute rather than completing. It installs fine with UI in ~25 mins
 
 
 ### WinRM
