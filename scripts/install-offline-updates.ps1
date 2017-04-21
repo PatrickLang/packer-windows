@@ -8,11 +8,12 @@ $httpIndex.Links | Select-Object -Property href | ForEach-Object {
         Write-Output "Downloading $fullUrl to $localPath"
         Invoke-WebRequest -UseBasicParsing $fullUrl -OutFile $localPath
         #dism.exe /online /add-package:"$($_.href)"
+        Get-item $localPath | Write-Output
         Write-Output "Starting update..."
         wusa.exe $localPath /quiet /norestart /log:"$($ENV:TEMP)\\$($_.href).log"
         $t = Measure-Command { Get-Process wusa | Wait-Process }
         Write-Output "Update process finished in $($t.ToString())"
-        notepad.exe # TEMP for debugging
+        Start-Process -wait notepad.exe # TEMP for debugging
         Remove-Item $localPath
     }
     else
