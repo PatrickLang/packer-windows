@@ -1,0 +1,37 @@
+root = "C:\\containerd\\root"
+state = "C:\\containerd\\state"
+oom_score = 0
+
+[grpc]
+  address = "\\\\.\\pipe\\containerd-containerd"
+  uid = 0
+  gid = 0
+  max_recv_message_size = 16777216
+  max_send_message_size = 16777216
+
+[debug]
+  address = ""
+  uid = 0
+  gid = 0
+  level = ""
+
+[metrics]
+  address = ""
+  grpc_histogram = false
+
+[cgroup]
+  path = ""
+
+[plugins]
+  [plugins.diff-service]
+    default = ["windows", "windows-lcow"]
+  [plugins.opt]
+    path = "C:\\containerd\\root\\opt"
+  [plugins.restart]
+    interval = "10s"
+  [plugins.scheduler]
+    pause_threshold = 0.02
+    deletion_threshold = 0
+    mutation_threshold = 100
+    schedule_delay = "0s"
+    startup_delay = "100ms"
