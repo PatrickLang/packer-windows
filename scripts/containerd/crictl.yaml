@@ -1,0 +1,4 @@
+runtime-endpoint: \\.\pipe\containerd-containerd
+image-endpoint: \\.\pipe\containerd-containerd
+timeout: 0
+debug: true
