@@ -40,7 +40,7 @@
                     <InstallFrom>
                         <MetaData wcm:action="add">
                             <Key>/IMAGE/NAME</Key>
-                            <Value>Windows Server 2019 Datacenter</Value>
+                            <Value>Windows Server 2019 SERVERDATACENTER</Value>
                         </MetaData>
                     </InstallFrom>
                     <InstallTo>
@@ -50,12 +50,11 @@
                 </OSImage>
             </ImageInstall>
             <UserData>
+                <!-- Product Key from https://www.microsoft.com/de-de/evalcenter/evaluate-windows-server-technical-preview?i=1 -->
                 <ProductKey>
-                    <!--
-                        Windows Server Insider product key
-                        See https://blogs.windows.com/windowsexperience/2017/07/13/announcing-windows-server-insider-preview-build-16237/
-                    -->
-                    <Key>B69WH-PRNHK-BXVK3-P9XF7-XD84W</Key>
+                    <!-- Do not uncomment the Key element if you are using trial ISOs -->
+                    <!-- You must uncomment the Key element (and optionally insert your own key) if you are using retail or volume license ISOs -->
+                    <Key>6XBNX-4JQGW-QX6QG-74P76-72V67</Key>
                     <WillShowUI>OnError</WillShowUI>
                 </ProductKey>
                 <AcceptEula>true</AcceptEula>
@@ -69,7 +68,7 @@
             <OEMInformation>
                 <HelpCustomized>false</HelpCustomized>
             </OEMInformation>
-            <ComputerName>vagrant-2016</ComputerName>
+            <ComputerName>vagrant-2019</ComputerName>
             <TimeZone>Pacific Standard Time</TimeZone>
             <RegisteredOwner/>
         </component>

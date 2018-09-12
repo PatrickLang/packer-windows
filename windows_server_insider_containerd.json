@@ -2,9 +2,9 @@
   "builders": [
     {
       "boot_command": [
-        "<enter>"
+        "<esc>1<enter><enter><wait5><enter>"
       ],
-      "boot_wait": "1s",
+      "boot_wait": "5s",
       "communicator": "winrm",
       "cpu": 2,
       "disk_size": "{{user `disk_size`}}",

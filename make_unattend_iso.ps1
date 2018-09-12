@@ -2,6 +2,15 @@
 
 
 $isoList = @(
+  @{
+        FileName="./iso/windows_server_2019_unattend.iso";
+        Files=@(
+            "./answer_files/2019/autounattend.xml",
+            "./scripts/disable-screensaver.ps1",
+            "./scripts/disable-winrm.ps1",
+            "./scripts/enable-winrm.ps1"
+        )
+    },
     @{
         FileName="./iso/windows_server_insider_unattend.iso";
         Files=@(
