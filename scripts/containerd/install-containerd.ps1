@@ -14,6 +14,7 @@ $httpIndex.Links | Select-Object -Property href | ForEach-Object {
     $fullUrl = "$httpRoot/$($_.href)"
     $localPath = "$($ENV:TEMP)\\$($_.href)"
     Write-Output "Downloading $fullUrl to $localPath"
+    Invoke-WebRequest -UseBasicParsing $fullUrl -OutFile $localPath
 }
 move-item containerd-shim-runhcs-v1.exe C:\containerd\bin\containerd-shim-runhcs-v1.exe
 move-item containerd.exe C:\containerd\bin\containerd.exe
