@@ -5,4 +5,5 @@ $httpIndex.Links | Select-Object -Property href | ForEach-Object {
     $fullUrl = "$httpRoot/$($_.href)"
     $localPath = "$($ENV:TEMP)\\$($_.href)"
     Write-Output "Downloading $fullUrl to $localPath"
+    Invoke-WebRequest -UseBasicParsing $fullUrl -OutFile $localPath
 }
