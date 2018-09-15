@@ -165,7 +165,7 @@
     "restart_timeout": "5m",
     "vhv_enable": "false",
     "winrm_timeout": "2h",
-    "todo1": "Fix edition - still pops dialog since editions don't match",
+    "todo1": "./scripts/containerd/containerd-pull.ps1",
     "todo2": ""
   }
 }
