@@ -3,6 +3,5 @@ if (Test-Path ./output-hyperv-iso) {
 }
 
 packer build --only=hyperv-iso `
-             --var iso_url=./iso/en_windows_server_2019_x64_dvd_4cb967d8.iso `
-             --var iso_checksum="4C5DD63EFEE50117986A2E38D4B3A3FBAF3C1C15E2E7EA1D23EF9D8AF148DD2D" `
+             --var iso_url=./iso/17763.253.190108-0006.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso `
              windows_2019_docker.json
